@@ -2,4 +2,11 @@
     <string name="app_name">homework_new</string>
 
     <string name="chat_room_title">我和%1$s的对话</string>
+
+    <string name="fans_icon_name">粉丝</string>
+    <string name="thumb_icon_name">赞</string>
+    <string name="myself_icon_name">\@我的</string>
+    <string name="review_icon_name">评论</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="pre_index">其编号是 </string>
 </resources>
