@@ -16,7 +16,7 @@ public class IndexDisplayView extends AppCompatActivity {
         Log.d(TAG, "IndexDisplayView created!");
         TextView textView = new TextView(this);
         Log.d(TAG, "get position " + getIntent().getStringExtra("idx"));
-        textView.setText(String.format("%d", getIntent().getStringExtra("idx")));
+        textView.setText(getIntent().getStringExtra("idx"));
         textView.setGravity(Gravity.CENTER);
         textView.setTextSize(40);
         setContentView(textView);

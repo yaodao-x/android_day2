@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Collections;
@@ -45,7 +46,9 @@ public class Exercises3 extends AppCompatActivity {
             findViewById(entry.getKey()).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(Exercises3.this, entry.getValue(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(Exercises3.this, NameDisplayView.class);
+                    intent.putExtra("function", getString(entry.getValue()));
+                    startActivity(intent);
                 }
             });
         }
@@ -58,7 +61,7 @@ public class Exercises3 extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.d(TAG, "ListView item clicked!");
                 Intent intent = new Intent(Exercises3.this, IndexDisplayView.class);
-                intent.putExtra("idx", position);
+                intent.putExtra("idx", "" + position);
                 startActivity(intent);
             }
         });
@@ -101,8 +104,10 @@ public class Exercises3 extends AppCompatActivity {
             } else {
                 view = convertView;
             }
-
-
+            Message message = messages.get(position);
+            ((TextView) view.findViewById(R.id.tv_title)).setText(message.getTitle());
+            ((TextView) view.findViewById(R.id.tv_description)).setText(message.getDescription());
+            ((TextView) view.findViewById(R.id.tv_time)).setText(message.getTime());
             return view;
         }
     }
