@@ -23,4 +23,6 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.ss.android.ugc.chapter1", appContext.getPackageName());
     }
+
+
 }
